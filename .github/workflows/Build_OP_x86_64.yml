@@ -51,12 +51,10 @@ jobs:
 
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/Lienol/openwrt
+        REPO_URL: https://github.com/wuabuhuan/Lienol-OpenWrt
         REPO_BRANCH: 22.03
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
-        echo "'src-git kenzo https://github.com/kenzok8/openwrt-packages' 'src-git small https://github.com/kenzok8/small'" >> ./feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
